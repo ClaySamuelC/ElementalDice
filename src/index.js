@@ -6,12 +6,28 @@ const createScene = () => {
 
   const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0));
   
-  const ground = BABYLON.MeshBuilder.CreateGround("ground", {height: 8.0, width: 8.0, subdivisions: 4});
-  const die = BABYLON.MeshBuilder.CreateBox("die", {height: 1, width: 1, depth: 1});
+  const ground = createGround();
+  const die = createDie();
+
+  return scene;
+};
+
+const createDie = () => {
+  const die = BABYLON.MeshBuilder.CreateBox("die", {});
 
   die.position.y = 0.5;
 
-  return scene;
+  return die;
+};
+
+const createGround = () => {
+  const ground = BABYLON.MeshBuilder.CreateGround("ground", {height: 8.0, width: 8.0, subdivisions: 4});
+  
+  const groundMat = new BABYLON.StandardMaterial("groundMat");
+  groundMat.diffuseColor = new BABYLON.Color3.Green();
+  ground.material = groundMat;
+
+  return ground;
 };
 
 const canvas = document.getElementById("renderCanvas"); // Get the canvas element
