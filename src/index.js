@@ -14,7 +14,7 @@ const createScene = () => {
 
 const createDie = () => {
   const dieMat = new BABYLON.StandardMaterial("dieMat");
-  dieMat.diffuseTexture = new BABYLON.Texture("https://assets.babylonjs.com/environments/cubehouse.png"); // TODO: make import assets/dieFace.jpg
+  dieMat.diffuseTexture = new BABYLON.Texture("https://i.imgur.com/BksHZBN.jpg"); // TODO: make import assets/dieFace.jpg
 
   const faceUV = [];
   faceUV[0] = new BABYLON.Vector4(4/6, 0.0, 5/6, 1.0); // back: 5
